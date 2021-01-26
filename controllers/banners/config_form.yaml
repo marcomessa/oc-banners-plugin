@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Banner
+
+# Model Form Field configuration
+form: $/mmes/banners/models/banner/fields.yaml
+
+# Model Class name
+modelClass: Mmes\Banners\Models\Banner
+
+# Default redirect location
+defaultRedirect: mmes/banners/banners
+
+# Create page
+create:
+    title: Create Banner
+    redirect: mmes/banners/banners/update/:id
+    redirectClose: mmes/banners/banners
+
+# Update page
+update:
+    title: Edit Banner
+    redirect: mmes/banners/banners
+    redirectClose: mmes/banners/banners
+
+# Preview page
+preview:
+    title: Preview Banner
