@@ -9,12 +9,6 @@ tabs:
             label: mmes.banners::lang.form.name
             span: left
             tab: mmes.banners::lang.tabs.main
-        trigger:
-            label: mmes.banners::lang.form.trigger
-            type: dropdown
-            emptyOption: mmes.banners::lang.triggers.empty_option
-            span: right
-            tab: mmes.banners::lang.tabs.main
         content:
             label: mmes.banners::lang.form.content
             type: markdown
