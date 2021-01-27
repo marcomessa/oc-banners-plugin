@@ -1,5 +1,6 @@
 [data-mmes-modal] {
   position: fixed;
+  display: none;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -47,6 +48,7 @@
   animation: fadeIn ease 1s;
 }
 .fade-in-slide-in {
+  display: block;
   animation: fadeInSlideIn ease 1s;
 }
 

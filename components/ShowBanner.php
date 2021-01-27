@@ -8,6 +8,7 @@ class ShowBanner extends ComponentBase
     /** @var string[] Trigger options */
     const triggers = [
         'mmes.banners::lang.triggers.on_load',
+        'mmes.banners::lang.triggers.on_mouse_exit',
     ];
 
     public function componentDetails()

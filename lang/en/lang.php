@@ -35,6 +35,7 @@ return [
     ],
     'triggers' => [
         'on_load' => 'On Load',
+        'on_mouse_exit' => 'On Mouse Exit',
         'empty_option' => '-- choose a trigger action --',
     ],
     'show_banner' => [

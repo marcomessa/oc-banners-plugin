@@ -1,4 +1,4 @@
-<div data-mmes-modal class="fade-in-slide-in">
+<div data-mmes-modal>
     <div class="mmes-row mmes-row--double">
         <div class="mmes-row__col" style="background-image: url({{ __SELF__.banner.image.getPath }})">
             {% partial __SELF__ ~ '::close-button' %}
@@ -17,8 +17,8 @@
 
 {% put scripts %}
     <script>
-      let modal = new Modal({{ __SELF__.property('trigger') }})
+      let modal = new Modal({{ __SELF__.getProperties|json_encode|raw }})
 
-      modal.open()
+      modal.init()
     </script>
 {% endput %}

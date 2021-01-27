@@ -1,6 +1,6 @@
 export default class Modal {
-  constructor(trigger) {
-    this.trigger = trigger
+  constructor(properties) {
+    this.properties = properties
     this.prepareVars()
   }
 
@@ -23,16 +23,34 @@ export default class Modal {
 
   removeEvents() {
     this.overlay.removeEventListener('click', () => this.boundClose())
+    document.removeEventListener('mouseleave', this.boundOnMouseLeaveDocument)
   }
 
-  open() {
+  init() {
+    switch (this.properties.trigger) {
+      case "0": // on load
+        this.show()
+        break;
+      case "1": //on mouse exit
+        this.boundOnMouseLeaveDocument = evt => this.onMouseLeaveDocument(evt)
+        document.addEventListener('mouseleave', this.boundOnMouseLeaveDocument)
+        break;
+    }
+  }
+
+  show() {
     this.appendOverlay()
     this.initEvents()
+    this.modal.classList.add('fade-in-slide-in')
   }
 
   close() {
     this.removeEvents()
     document.body.removeChild(this.overlay)
     document.body.removeChild(this.modal)
+  }
+
+  onMouseLeaveDocument() {
+    this.show()
   }
 }
