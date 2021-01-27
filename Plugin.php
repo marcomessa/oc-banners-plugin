@@ -1,6 +1,7 @@
 <?php namespace Mmes\Banners;
 
 use Backend;
+use Mmes\Banners\Components\ShowBanner;
 use System\Classes\PluginBase;
 
 /**
@@ -17,9 +18,9 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'Banners',
-            'description' => 'No description provided yet...',
+            'description' => 'Popup banners for most use cases',
             'author'      => 'Mmes',
-            'icon'        => 'icon-leaf'
+            'icon'        => 'icon-object-group'
         ];
     }
 
@@ -50,10 +51,8 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
-
         return [
-            'Mmes\Banners\Components\MyComponent' => 'myComponent',
+            ShowBanner::class => 'showBanner'
         ];
     }
 
@@ -64,12 +63,10 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
         return [
-            'mmes.banners.some_permission' => [
+            'mmes.banners.view_banners' => [
                 'tab' => 'Banners',
-                'label' => 'Some permission'
+                'label' => 'Consente di vedere il menu Banner'
             ],
         ];
     }
@@ -81,13 +78,12 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
 
         return [
             'banners' => [
-                'label'       => 'Banners',
-                'url'         => Backend::url('mmes/banners/mycontroller'),
-                'icon'        => 'icon-leaf',
+                'label'       => 'mmes.banners::lang.menu.name',
+                'url'         => Backend::url('mmes/banners/banners'),
+                'icon'        => 'icon-object-group',
                 'permissions' => ['mmes.banners.*'],
                 'order'       => 500,
             ],

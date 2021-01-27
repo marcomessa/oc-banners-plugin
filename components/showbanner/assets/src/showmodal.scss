@@ -1,0 +1,72 @@
+[data-mmes-modal] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  background-color: white;
+  z-index: 999999;
+  .mmes-row {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    &__col {
+      width: 100%;
+      background-size: cover;
+      background-position: center center;
+      padding: 60px 30px;
+      text-align: center;
+    }
+    &--double {
+      .mmes-row__col {
+        width: 50%;
+      }
+    }
+  }
+}
+
+[data-mmes-modal-close] {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  color: #808080;
+}
+
+[data-mmes-modal-overlay] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0, 0.7);
+  z-index: 999998;
+}
+
+.fade-in {
+  animation: fadeIn ease 1s;
+}
+.fade-in-slide-in {
+  animation: fadeInSlideIn ease 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@keyframes fadeInSlideIn {
+  0% {
+    opacity:0;
+    transform: translate3d(-50%, calc(-50% + 100px), 0)
+  }
+  100% {
+    opacity:1;
+    transform: translate3d(-50%, -50%, 0)
+  }
+}
+

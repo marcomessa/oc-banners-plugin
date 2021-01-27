@@ -1,6 +1,7 @@
 <?php namespace Mmes\Banners\Models;
 
 use Model;
+use System\Models\File;
 
 /**
  * Banner Model
@@ -9,10 +10,13 @@ class Banner extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
-    /**
-     * @var string The database table used by the model.
-     */
+    /** @var string[] Trigger options */
+    const triggers = [
+      'mmes.banners::lang.triggers.on_load',
+    ];
+
     public $table = 'mmes_banners_banners';
+    public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
     /**
      * @var array Guarded fields
@@ -28,6 +32,13 @@ class Banner extends Model
      * @var array Validation rules for attributes
      */
     public $rules = [];
+
+    /**
+     * @var array Attributes that support translation, if available.
+     */
+    public $translatable = [
+        'content'
+    ];
 
     /**
      * @var array Attributes to be cast to native types
@@ -67,6 +78,13 @@ class Banner extends Model
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [];
+    public $attachOne = [
+        'image' => File::class,
+    ];
     public $attachMany = [];
+
+    public function getTriggerOptions()
+    {
+        return self::triggers;
+    }
 }

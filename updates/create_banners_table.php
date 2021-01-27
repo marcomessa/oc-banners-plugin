@@ -11,6 +11,10 @@ class CreateBannersTable extends Migration
         Schema::create('mmes_banners_banners', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->string('name')->unique();
+            $table->text('content');
+            $table->text('style')->nullable();
+            $table->unsignedInteger('trigger')->nullable();
             $table->timestamps();
         });
     }

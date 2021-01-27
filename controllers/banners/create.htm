@@ -1,6 +1,8 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('mmes/banners/banners') ?>">Banners</a></li>
+        <li><a href="<?= Backend::url('mmes/banners/banners') ?>">
+                <?= e(trans('mmes.banners::lang.breadcrumb.banners')) ?>
+            </a></li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -22,7 +24,7 @@
                     data-hotkey="ctrl+s, cmd+s"
                     data-load-indicator="Creating Banner..."
                     class="btn btn-primary">
-                    Create
+                    <?= e(trans('mmes.banners::lang.form.create')) ?>
                 </button>
                 <button
                     type="button"
@@ -32,10 +34,10 @@
                     data-hotkey="ctrl+enter, cmd+enter"
                     data-load-indicator="Creating Banner..."
                     class="btn btn-default">
-                    Create and Close
+                    <?= e(trans('mmes.banners::lang.form.create_and_close')) ?>
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('mmes/banners/banners') ?>">Cancel</a>
+                    <?= e(trans('mmes.banners::lang.form.or')) ?> <a href="<?= Backend::url('mmes/banners/banners') ?>"><?= e(trans('mmes.banners::lang.form.cancel')) ?></a>
                 </span>
             </div>
         </div>
@@ -45,6 +47,6 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('mmes/banners/banners') ?>" class="btn btn-default">Return to banners list</a></p>
+    <p><a href="<?= Backend::url('mmes/banners/banners') ?>" class="btn btn-default"><?= e(trans('mmes.banners::lang.form.return')) ?></a></p>
 
 <?php endif ?>

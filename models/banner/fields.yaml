@@ -2,7 +2,34 @@
 #  Form Field Definitions
 # ===================================
 
-fields:
-    id:
-        label: ID
-        disabled: true
+
+tabs:
+    fields:
+        name:
+            label: mmes.banners::lang.form.name
+            span: left
+            tab: mmes.banners::lang.tabs.main
+        trigger:
+            label: mmes.banners::lang.form.trigger
+            type: dropdown
+            emptyOption: mmes.banners::lang.triggers.empty_option
+            span: right
+            tab: mmes.banners::lang.tabs.main
+        content:
+            label: mmes.banners::lang.form.content
+            type: markdown
+            mode: split
+            size: huge
+            tab: mmes.banners::lang.tabs.main
+        image:
+            label: mmes.banners::lang.form.image
+            type: fileupload
+            mode: image
+            span: left
+            imageWidth: 300
+            tab: mmes.banners::lang.tabs.main
+        style:
+            type: codeeditor
+            size: huge
+            language: css
+            tab: mmes.banners::lang.tabs.custom_style

@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Banner
+name: mmes.banners::lang.menu.name
 
 # Model Form Field configuration
 form: $/mmes/banners/models/banner/fields.yaml
@@ -16,13 +16,13 @@ defaultRedirect: mmes/banners/banners
 
 # Create page
 create:
-    title: Create Banner
+    title: mmes.banners::lang.menu.create
     redirect: mmes/banners/banners/update/:id
     redirectClose: mmes/banners/banners
 
 # Update page
 update:
-    title: Edit Banner
+    title: mmes.banners::lang.menu.update
     redirect: mmes/banners/banners
     redirectClose: mmes/banners/banners
 

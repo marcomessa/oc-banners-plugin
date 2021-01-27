@@ -9,7 +9,7 @@ list: $/mmes/banners/models/banner/columns.yaml
 modelClass: Mmes\Banners\Models\Banner
 
 # List Title
-title: Manage Banners
+title: mmes.banners::lang.menu.manage
 
 # Link URL for each record
 recordUrl: mmes/banners/banners/update/:id
