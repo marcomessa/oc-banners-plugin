@@ -24,10 +24,15 @@ return [
         'trigger' => 'Trigger',
         'created_at' => 'Created at',
         'updated_at' => 'Updated at',
+        'use_cookie' => 'Set cookie on close',
+        'cookie_name' => 'Cookie name',
+        'cookie_duration' => 'Cookie duration',
+        'cookie_duration_help' => 'Choose how many days the cookie should last',
     ],
     'tabs' => [
         'main' => 'Main',
         'custom_style' => 'Custom Style',
+        'settings' => 'Settings',
     ],
     'banners' => [
         'new_banner' => 'New Banner',

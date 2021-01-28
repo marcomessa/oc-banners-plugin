@@ -2,6 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use Mmes\Banners\Models\Banner;
+use October\Rain\Support\Facades\Flash;
 
 class ShowBanner extends ComponentBase
 {
@@ -34,6 +35,21 @@ class ShowBanner extends ComponentBase
                 'type' => 'dropdown',
                 'required' => true
             ],
+            'useCookie' => [
+                'title' => 'mmes.banners::lang.form.use_cookie',
+                'type' => 'checkbox',
+                'group' => 'mmes.banners::lang.tabs.settings'
+            ],
+            'cookieName' => [
+                'title' => 'mmes.banners::lang.form.cookie_name',
+                'default' => 'mmes_c',
+                'group' => 'mmes.banners::lang.tabs.settings'
+            ],
+            'cookieDuration' => [
+                'title' => 'mmes.banners::lang.form.cookie_duration',
+                'default' => '360',
+                'group' => 'mmes.banners::lang.tabs.settings'
+            ],
         ];
     }
 
@@ -56,6 +72,10 @@ class ShowBanner extends ComponentBase
 
     public function banner()
     {
-        return Banner::findOrFail($this->property('banner'));
+        try {
+            return Banner::findOrFail($this->property('banner'));
+        } catch (\Exception $e) {
+            return Flash::error('No Banner');
+        }
     }
 }

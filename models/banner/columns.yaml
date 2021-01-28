@@ -5,10 +5,6 @@
 columns:
     name:
         label: mmes.banners::lang.form.name
-    trigger:
-        label: mmes.banners::lang.form.trigger
-        type: partial
-        path: trigger-field
     created_at:
         label: mmes.banners::lang.form.created_at
         type: datetime
